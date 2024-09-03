@@ -1,0 +1,38 @@
+Instalar o typescript: npm install typescript@4.2.2 --save-dev
+Para rodar o projeto: npm run server
+
+***Important***
+"Todo código escrito em TypeScript, deve ser escrito na pasta 'app'. Quando o código estiver pronto, o mesmo deverá ser transformado em código JavaScript. E os arquivos TypeScript que serão compilados, cairão automaticamente na pasta 'dist'(distribuição). Porque o navegador não entende TS, e sim JS."
+
+Expressões regulares estão dentro de barras. Ex: "/-/g", essa é uma expressão regular que localiza todos os hífens no escopo. Todos é representado por "g = global"
+
+Em um Array<T>, "T" significa tipo. E esse tipo pode ser de uma classe. Por exemplo: Array<Pessoas>. Ou então da forma mais comum, um array tipado: Array<string>
+
+Um método estático(static) pode ser acessado direto da classe, sem instanciá-lo.
+
+Para fazer um teste de performance: poderá utilizar: const t1 = performance.now(), no início. E: const t2 = performance.now(), no final. As duas declarações devem estar no início e fim do método.
+
+-- Sobre Prototipação --
+Se eu tenho uma instância de uma classe e eu chamdo um método, e esse método não existe. Porém se o método não existe, o compilador irá chamar do protótipo. Se tiver
+significar que eu utilizei herança e herdei. Então será chamado do protótipo.
+
+Levando em consideração a estrutura a seguir:
+
+export function logarTempoDeExecucao() {
+    return function(
+        target: any, // se o decorator estiver encima de um método estático de uma classe, pode ser uma função construtora, e se estiver em um método que não é estático, ele vai ser o protótipo.
+        propertyKey: string, // ele dá um nome do método que foi decorado, em formato string
+        descriptor: PropertyDescriptor // ele sabe tudo sobre o método que queremos executar, pois tem uma referência para o método original
+    ) {
+ 	return descriptor
+    }
+}
+
+-- Sobre Interfaces --
+
+- Rainha do polimorfismo e do typesafety
+- Uma interface "nunca" pode ser instanciada como uma classe
+- Toda interface é pública e todo método de uma interface é abstrato
+- Uma classe pode implementar uma interface: implements
+- Não há limites para quantas interfaces uma classe pode implementar
+- Uma interface pode estender quantas outras interfaces forem necessárias. Para isso, assim como na herança de classes, deve-se utilizar o "extends"

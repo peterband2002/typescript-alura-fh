@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "app/dist/js", // Destino dos arquivos que serão convertidos
+        "target": "ES6", // Aqui estou definindo que irei utilizar ECMAScript 6
+        "noEmitOnError": true, // Este parâmetro não irá gerar o aquivo JS enquando o arquivo TS estiver com erros
+        "noImplicitAny": true, // Este parâemtro irá informar ao TS que não assuma "any" como padrão para recebimento de valores
+        "removeComments": true, // Aqui estou removendo os comentários quando é feita a conversão de ts para js
+        "strictNullChecks": true, // Aqui estou dizendo que agora o TS irá cobrar tratamento de "nulls"
+        "experimentalDecorators": true, // Aqui estou dizendo que irei utilizar decorators no meu código
+        "sourceMap": true
+    },
+    "include": ["app/src/**/*"] // Estou capturando todo o diretório, toda subpasta e todo aquivo
+}
